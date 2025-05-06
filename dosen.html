@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Absensi Mahasiswa</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const absenList = JSON.parse(localStorage.getItem('absensi')) || [];
+      const container = document.getElementById('daftar');
+
+      absenList.forEach(item => {
+        const div = document.createElement('div');
+        div.innerText = `Nama: ${item.nama}, NIM: ${item.nim}, Kelas: ${item.kelas}, Tanggal: ${item.tanggal}, Lokasi: ${item.lokasi}`;
+        container.appendChild(div);
+      });
+    });
+  </script>
+</head>
+<body>
+  <h2>Daftar Kehadiran Mahasiswa</h2>
+  <div id="daftar"></div>
+</body>
+</html>
